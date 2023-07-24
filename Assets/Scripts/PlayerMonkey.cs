@@ -7,6 +7,7 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField]
     private bool isMonkeyJump = true;
     private PlayerController pc;
+    Vector2 collisionObject;
 
     private void Start()
     {
@@ -18,12 +19,11 @@ public class PlayerMonkey : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && pc.isJump && !isMonkeyJump)
         {
             isMonkeyJump = true;
-            pc.rb.gravityScale = 0f;
-            //Vector2 monkeyToFixture = new Vector2(horizontalInput, 0f);
-            //pc.rb.AddForce();
+
         }
         if  (Input.GetKeyUp(KeyCode.Space)){
-            pc.rb.gravityScale = 1f;
+            
+            pc.rb.gravityScale = pc.jumpForceInitialValue;
         }
         
     }
@@ -33,6 +33,7 @@ public class PlayerMonkey : MonoBehaviour
         if (collision.gameObject.CompareTag("MonkeyJump"))
         {
             isMonkeyJump = false;
+            collisionObject = collision.gameObject.GetComponent<Transform>().position;
         } 
     }
     private void OnTriggerExit2D(Collider2D collision)

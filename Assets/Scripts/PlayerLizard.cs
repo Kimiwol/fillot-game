@@ -17,11 +17,6 @@ public class PlayerLizard : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Move(float y)
-    {
-        rb.velocity = new Vector2(rb.velocity.x, y * pc.moveSpeed*5);
-    }
-
     private void Update()
     {
         if (isOnWall){
@@ -32,7 +27,7 @@ public class PlayerLizard : MonoBehaviour
     void MoveByKeyInput()
     {
         float y = Input.GetAxisRaw("Vertical");
-        Move(y);
+        rb.velocity = new Vector2(0, y * pc.moveSpeed);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
