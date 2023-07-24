@@ -14,8 +14,8 @@ public class PlayerCheetah : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.LeftShift)){
-            pc.moveSpeed = 2f;
-            pc.jumpForce = 10f;
+            pc.moveSpeed = 1f;
+            pc.jumpForce = 3f;
         }else if(Input.GetKeyUp(KeyCode.LeftShift)){
             pc.moveSpeed = 1f;
             pc.jumpForce = 5f;
