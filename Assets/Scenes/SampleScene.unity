@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 2406293}
   - component: {fileID: 2406292}
   - component: {fileID: 2406294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -640,7 +640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 67462322}
   - component: {fileID: 67462321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391330035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1019,9 +1019,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 859763464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 957f7fe151c52084da295b87c25c9fc6, type: 3}
+  m_Script: {fileID: 11500000, guid: a09de7a70757a4a70914cac8f109604b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallChk: {fileID: 391330036}
+  wallchkDistance: 10
+  w_Layer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1154405697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,7 +1038,7 @@ GameObject:
   - component: {fileID: 1154405698}
   - component: {fileID: 1154405700}
   - component: {fileID: 1154405699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Composite Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1133,7 +1138,7 @@ GameObject:
   - component: {fileID: 1163063622}
   - component: {fileID: 1163063621}
   - component: {fileID: 1163063620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1477,7 +1482,7 @@ GameObject:
   - component: {fileID: 1986313793}
   - component: {fileID: 1986313792}
   - component: {fileID: 1986313794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Composite Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
