@@ -613,7 +613,14 @@ GameObject:
   - component: {fileID: 859763471}
   - component: {fileID: 859763470}
   - component: {fileID: 859763473}
+<<<<<<< HEAD
   - component: {fileID: 859763475}
+<<<<<<< HEAD
+  - component: {fileID: 859763476}
+=======
+>>>>>>> parent of fff2d1f (타일맵 수정)
+=======
+>>>>>>> parent of 59cd76f (천장 벽 추가)
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -771,7 +778,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859763464}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96b18cadc7a3941ac85baf89dcb3969f, type: 3}
   m_Name: 
@@ -789,11 +796,12 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+<<<<<<< HEAD
 --- !u!251 &859763475
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -813,6 +821,23 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+<<<<<<< HEAD
+--- !u!114 &859763476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859763464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957f7fe151c52084da295b87c25c9fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+=======
+>>>>>>> parent of fff2d1f (타일맵 수정)
+=======
+>>>>>>> parent of 59cd76f (천장 벽 추가)
 --- !u!1 &1154405697
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +849,7 @@ GameObject:
   - component: {fileID: 1154405698}
   - component: {fileID: 1154405700}
   - component: {fileID: 1154405699}
+  - component: {fileID: 1154405701}
   m_Layer: 0
   m_Name: Composite Wall
   m_TagString: Untagged
@@ -858,7 +884,7 @@ CompositeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
@@ -890,6 +916,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!251 &1154405701
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154405697}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1163063618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,9 +1331,41 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
+<<<<<<< HEAD
   m_ColliderPaths: []
   m_CompositePaths:
     m_Paths: []
+=======
+  m_ColliderPaths:
+  - m_Collider: {fileID: 2406294}
+    m_ColliderPaths:
+    - - X: 94596432
+        Y: 43391000
+      - X: 74596432
+        Y: 43391000
+      - X: 74596432
+        Y: 33391002
+      - X: 94596432
+        Y: 33391002
+    - - X: 74596432
+        Y: -16608999
+      - X: -75403568
+        Y: -16608999
+      - X: -75403568
+        Y: -26608998
+      - X: 74596432
+        Y: -26608998
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 9.459614, y: 3.3391001}
+      - {x: 9.459614, y: 4.3391}
+      - {x: 7.4596434, y: 4.339071}
+      - {x: 7.459673, y: 3.3391001}
+    - - {x: 7.459614, y: -2.6608999}
+      - {x: 7.459614, y: -1.6608999}
+      - {x: -7.540357, y: -1.6609292}
+      - {x: -7.540327, y: -2.6608999}
+>>>>>>> f662bb5efcc45d40d9759c06c2c7b2d929798466
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1986313793

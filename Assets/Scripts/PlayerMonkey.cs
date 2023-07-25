@@ -22,6 +22,8 @@ public class PlayerMonkey : MonoBehaviour
         {
             pc.rb.gravityScale = 0f;
             StartCoroutine(MonkeyJump());
+            isMonkeyJump = true;
+
         }
         if  (Input.GetKeyUp(KeyCode.Space)){
             pc.rb.gravityScale = pc.jumpForceInitialValue;
