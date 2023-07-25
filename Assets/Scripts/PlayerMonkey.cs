@@ -9,11 +9,7 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField]
     private bool isMonkeyJump = true;
     private PlayerController pc;
-<<<<<<< HEAD
     Vector2 monkeyJumpCenter;
-=======
-    Vector2 collisionObject;
->>>>>>> parent of fff2d1f (타일맵 수정)
 
     private void Start()
     {
@@ -24,13 +20,10 @@ public class PlayerMonkey : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && !isMonkeyJump)
         {
-<<<<<<< HEAD
             pc.rb.gravityScale = 0f;
             StartCoroutine(MonkeyJump());
-=======
             isMonkeyJump = true;
 
->>>>>>> parent of fff2d1f (타일맵 수정)
         }
         if  (Input.GetKeyUp(KeyCode.Space)){
             pc.rb.gravityScale = pc.jumpForceInitialValue;
