@@ -11,7 +11,7 @@ public class PlayerMonkey : MonoBehaviour
     private PlayerController pc;
     Vector2 monkeyJumpCenter;
 
-    private void Start()
+    private void Awake()
     {
         pc = GetComponent<PlayerController>();
     }
