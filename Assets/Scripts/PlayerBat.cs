@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatController : MonoBehaviour
+public class PlayerBat : MonoBehaviour
 {
     private bool isBat = false;
     private PlayerController pc;
@@ -40,5 +40,4 @@ public class BatController : MonoBehaviour
         pc.isJump = true;
         pc.rb.AddForce(new Vector2(0f, -pc.jumpForce), ForceMode2D.Impulse);
     }
-
 }
