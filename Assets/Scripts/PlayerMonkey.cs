@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerMonkey : MonoBehaviour
 {
+    private float monkeyJumpRadius = 2.0f; 
+    private float monkeyJumpSpeed = 2.0f;
     [SerializeField]
     private bool isMonkeyJump = true;
     private PlayerController pc;
-    //private float radius = 2.0f; 
-    //private float speed = 2.0f;
-    Vector2 collisionObject;
+    Vector2 monkeyJumpCenter;
 
     private void Start()
     {
@@ -18,25 +18,39 @@ public class PlayerMonkey : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && pc.isJump && !isMonkeyJump)
+        if (Input.GetKey(KeyCode.Space) && !isMonkeyJump)
         {
+            pc.rb.gravityScale = 0f;
+            StartCoroutine(MonkeyJump());
             isMonkeyJump = true;
-            //angle += speed * Time.deltaTime;
-            //transform.position = center.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * radius;
+
         }
         if  (Input.GetKeyUp(KeyCode.Space)){
-            
             pc.rb.gravityScale = pc.jumpForceInitialValue;
         }
         
     }
+    private IEnumerator MonkeyJump()
+    {
+        float elapsedTime = 0f;
+        Vector2 initialPosition = transform.position;
+        Vector2 targetPosition = monkeyJumpCenter + new Vector2(Mathf.Cos(monkeyJumpSpeed), Mathf.Sin(monkeyJumpSpeed)) * monkeyJumpRadius;
 
-    private void OnTriggerStay2D(Collider2D collision)
+        while (elapsedTime < 1f)
+        {
+            elapsedTime += Time.deltaTime;
+            transform.position = Vector2.Lerp(initialPosition, targetPosition, elapsedTime);
+            yield return null;
+        }
+        transform.position = targetPosition;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("MonkeyJump"))
         {
             isMonkeyJump = false;
-            collisionObject = collision.gameObject.GetComponent<Transform>().position;
+            monkeyJumpCenter = collision.gameObject.GetComponent<Transform>().position;
+            Debug.Log(monkeyJumpCenter);
         } 
     }
     private void OnTriggerExit2D(Collider2D collision)
