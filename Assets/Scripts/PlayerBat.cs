@@ -16,13 +16,7 @@ public class PlayerBat : MonoBehaviour
     {
         pc = GetComponent<PlayerController>();
     }
-
-
-    private void Start()
-    {
-        Debug.Log("batStart");
-    }
-
+    
     // Update is called once per frame
     private void Update()
     {
