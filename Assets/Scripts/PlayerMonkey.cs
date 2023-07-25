@@ -7,6 +7,8 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField]
     private bool isMonkeyJump = true;
     private PlayerController pc;
+    //private float radius = 2.0f; 
+    //private float speed = 2.0f;
     Vector2 collisionObject;
 
     private void Start()
@@ -19,7 +21,8 @@ public class PlayerMonkey : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && pc.isJump && !isMonkeyJump)
         {
             isMonkeyJump = true;
-
+            //angle += speed * Time.deltaTime;
+            //transform.position = center.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * radius;
         }
         if  (Input.GetKeyUp(KeyCode.Space)){
             
