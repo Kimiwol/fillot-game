@@ -6,17 +6,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float moveSpeed = 9f;
-    public float jumpForce = 14f;
-    public Rigidbody2D rb;
+    public float moveSpeed = 0.3f;
+    public float jumpForce = 4f;
+
     public bool isJump = true;
-    public float jumpForceInitialValue;
+    public bool isWall;
+    public bool isGround;
+    public int isRight = 1;
   
-    
+    public Rigidbody2D rb;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        jumpForceInitialValue = rb.gravityScale;
     }
 
     private void Update()
@@ -28,19 +30,28 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate() {
         MoveByKeyInput();
+        StopToWall();
     }
     
     private void MoveByKeyInput()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(x * moveSpeed, rb.velocity.y);
+        float horizontalInput = Input.GetAxis("Horizontal");
+        if(horizontalInput > 0){
+            isRight = 1;
+        }
+        if(horizontalInput < 0){
+            isRight = -1;
+        }
+        Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * moveSpeed;
+        if(!isWall){
+            transform.position += movement;
+        }
     }
 
     public void Jump()
     {
         isJump = true;
         rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -50,4 +61,10 @@ public class PlayerController : MonoBehaviour
             isJump = false;
         }
     }
-}
+
+    private void StopToWall(){
+        Debug.DrawRay(transform.position, Vector2.right*isRight*1f, Color.red);
+        isWall = Physics2D.Raycast(transform.position, Vector2.right*isRight, 1f, LayerMask.GetMask("Wall"));
+        isGround = Physics2D.Raycast(transform.position, Vector2.down, 1f, LayerMask.GetMask("Wall"));
+    }
+}   

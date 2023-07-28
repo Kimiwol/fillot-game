@@ -11,7 +11,7 @@ public class PlayerSetter : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         
         rb.gravityScale = 3f;
-        rb.mass = 1f;
+        rb.mass = 0.3f;
         rb.freezeRotation = true;
     }
 
