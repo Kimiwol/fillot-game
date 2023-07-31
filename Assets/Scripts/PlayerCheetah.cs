@@ -7,8 +7,7 @@ public class PlayerCheetah : MonoBehaviour
     private PlayerController pc;
     private float moveSpeedInitialValue;
     private float jumpForceInitialValue; 
-    void Awake()
-    {
+    void Awake(){
         pc = GetComponent<PlayerController>();
         moveSpeedInitialValue = pc.moveSpeed;
         jumpForceInitialValue = pc.jumpForce;
@@ -19,7 +18,8 @@ public class PlayerCheetah : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift)){
             pc.moveSpeed = (float)(moveSpeedInitialValue*1.5);
             pc.jumpForce = (float)(jumpForceInitialValue*1.5);
-        }else if(Input.GetKeyUp(KeyCode.LeftShift)){
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftShift)){
             pc.moveSpeed = moveSpeedInitialValue;
             pc.jumpForce = jumpForceInitialValue;
         }
