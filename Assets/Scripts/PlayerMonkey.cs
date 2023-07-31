@@ -33,7 +33,7 @@ public class PlayerMonkey : MonoBehaviour
     {
         float elapsedTime = 0f;
         Vector2 initialPosition = transform.position;
-        Vector2 targetPosition = monkeyJumpCenter + new Vector2(Mathf.Cos(monkeyJumpSpeed), Mathf.Sin(monkeyJumpSpeed)) * monkeyJumpRadius;
+        Vector2 targetPosition = monkeyJumpCenter + new Vector2(Mathf.Cos( ), Mathf.Sin(monkeyJumpSpeed)) * monkeyJumpRadius;
 
         while (elapsedTime < 1f)
         {
