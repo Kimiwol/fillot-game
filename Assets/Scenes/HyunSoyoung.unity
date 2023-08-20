@@ -1001,6 +1001,23 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!1 &1757722063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2075119265975104688, guid: 7d2f0885761964aec9156c9cd73f7ff5, type: 3}
+  m_PrefabInstance: {fileID: 2075119266005973322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1757722064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757722063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04d6881424742b4c8a16507c5ea9a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1920585454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1075,10 @@ PrefabInstance:
     - target: {fileID: 2075119265975104692, guid: 7d2f0885761964aec9156c9cd73f7ff5, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075119265975104694, guid: 7d2f0885761964aec9156c9cd73f7ff5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2075119265975104694, guid: 7d2f0885761964aec9156c9cd73f7ff5, type: 3}
       propertyPath: wallCheck
