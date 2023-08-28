@@ -9,6 +9,7 @@ public class PlayerMonkey : MonoBehaviour
     [SerializeField]
     private bool isMonkeyJump = true;
     private PlayerController pc;
+    Vector2 monkeyJump;
     Vector2 monkeyJumpCenter;
 
     private void Awake()
@@ -21,7 +22,6 @@ public class PlayerMonkey : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && !isMonkeyJump)
         {
             pc.rb.gravityScale = 0f;
-            StartCoroutine(MonkeyJump());
             isMonkeyJump = true;
 
         }
@@ -29,20 +29,8 @@ public class PlayerMonkey : MonoBehaviour
         }
         
     }
-    private IEnumerator MonkeyJump()
-    {
-        float elapsedTime = 0f;
-        Vector2 initialPosition = transform.position;
-        Vector2 targetPosition = monkeyJumpCenter + new Vector2(Mathf.Cos( ), Mathf.Sin(monkeyJumpSpeed)) * monkeyJumpRadius;
 
-        while (elapsedTime < 1f)
-        {
-            elapsedTime += Time.deltaTime;
-            transform.position = Vector2.Lerp(initialPosition, targetPosition, elapsedTime);
-            yield return null;
-        }
-        transform.position = targetPosition;
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("MonkeyJump"))

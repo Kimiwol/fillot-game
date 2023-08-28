@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBat : MonoBehaviour
 {
-    private bool isBat = false;
+    private bool isBat;
     private PlayerController pc;
     // Start is called before the first frame update
     public Transform wallChk;
@@ -15,6 +15,7 @@ public class PlayerBat : MonoBehaviour
     private void Awake()
     {
         pc = GetComponent<PlayerController>();
+        isBat = false;
     }
     
     // Update is called once per frame
