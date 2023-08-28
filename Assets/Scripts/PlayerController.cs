@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public bool isJump = true;
     public bool isWall;
     public bool isGround;
+    public bool isWater;
     public int isRight = 1;
   
     public Rigidbody2D rb;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private void MoveByKeyInput()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
+
         if(horizontalInput > 0){
             isRight = 1;
         }
@@ -43,9 +45,12 @@ public class PlayerController : MonoBehaviour
             isRight = -1;
         }
         Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * moveSpeed;
+        
         if(!isWall){
             transform.position += movement;
         }
+        
+        
     }
 
     public void Jump()
@@ -60,11 +65,21 @@ public class PlayerController : MonoBehaviour
         {
             isJump = false;
         }
+
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            isWater = true;
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
     }
 
     private void StopToWall(){
         Debug.DrawRay(transform.position, Vector2.right*isRight*1f, Color.red);
         isWall = Physics2D.Raycast(transform.position, Vector2.right*isRight, 1f, LayerMask.GetMask("Wall"));
         isGround = Physics2D.Raycast(transform.position, Vector2.down, 1f, LayerMask.GetMask("Wall"));
+    }
+
+    private void Water(){
+        //물을 만나면 isWater=true;
     }
 }   

@@ -17,13 +17,15 @@ public class PlayerTurtle : MonoBehaviour
 
     void Update()
     {
-        /*if(pc.isWater)
+        if(pc.isWater)
         {
+            pc.moveSpeed = (float)(moveSpeedInitialValue*1.5);
+            pc.jumpForce = (float)(jumpForceInitialValue*0); //최종은 점프 불가능하게 수정할 예정
             
         }
         else{
             pc.moveSpeed = (float)(moveSpeedInitialValue*0.5);
             pc.jumpForce = (float)(jumpForceInitialValue*0.5);
-        }*/
+        }
     }
 }
