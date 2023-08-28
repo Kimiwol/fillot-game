@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1435556584960667163}
   - component: {fileID: 1435556584960667160}
   m_Layer: 0
-  m_Name: branch
+  m_Name: Branch
   m_TagString: MonkeyJump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
